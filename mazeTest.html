@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Test del Laberinto</title>
+<style>
+    body {
+    background-color: #0b0b0b;
+    color: #d0f0c0;
+    font-family: 'Courier New', monospace;
+    padding: 20px;
+    }
+
+    .pregunta {
+    margin-bottom: 30px;
+    }
+
+    button {
+    margin-top: 10px;
+    background-color: #1f1f1f;
+    color: #d0f0c0;
+    padding: 10px 20px;
+    border: 1px solid #d0f0c0;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+    button:hover {
+    background-color: #3a3a3a;
+    }
+
+    .resultado {
+    margin-top: 30px;
+    font-weight: bold;
+    color: #7aff7a;
+    }
+</style>
+</head>
+<body>
+
+    <h1>TEST CRUEL</h1>
+    <p>Status: Rastreando recuerdos...</p>
+
+    <form id="testLaberinto">
+    <div class="pregunta">
+        <p>1. Cuando Thomas despertó en el ascensor, no recordaba quién era. Vos… ¿qué fue lo primero que olvidaste?</p>
+        <label><input type="radio" name="p1" value="incorrecto"> El motivo</label><br>
+        <label><input type="radio" name="p1" value="correcto"> La verdad</label><br>
+        <label><input type="radio" name="p1" value="incorrecto"> Lo que dolía</label><br>
+        <label><input type="radio" name="p1" value="incorrecto"> El camino</label>
+    </div>
+
+    <div class="pregunta">
+        <p>2. Teresa se alejó de Thomas cuando otros le llenaron la cabeza... ¿por qué creés que lo hizo?</p>
+        <label><input type="radio" name="p2" value="incorrecto"> Porque dejó de quererlo</label><br>
+        <label><input type="radio" name="p2" value="incorrecto"> Porque confió en lo que le dijeron</label><br>
+        <label><input type="radio" name="p2" value="correcto"> Porque creyó que era lo correcto</label><br>
+        <label><input type="radio" name="p2" value="incorrecto"> Porque tenía miedo</label>
+    </div>
+
+    <div class="pregunta">
+        <p>3. El laberinto parecía imposible, pero había una salida. ¿Cuál fue la clave para encontrarla?</p>
+        <label><input type="radio" name="p3" value="incorrecto"> La memoria</label><br>
+        <label><input type="radio" name="p3" value="correcto"> La confianza</label><br>
+        <label><input type="radio" name="p3" value="incorrecto"> La desesperación</label><br>
+        <label><input type="radio" name="p3" value="incorrecto"> El control</label>
+    </div>
+
+    <button type="submit">Ver resultado</button>
+    </form>
+
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+    const form = document.getElementById("testLaberinto");
+    const resultado = document.getElementById("resultado");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const p1 = form.p1.value;
+        const p2 = form.p2.value;
+        const p3 = form.p3.value;
+
+        if (p1 === "correcto" && p2 === "correcto" && p3 === "correcto") {
+        resultado.innerHTML = `
+            ✔️ Recuperación completada.<br>
+            Memoria restaurada.<br>
+            Ahora que lo sabés... podés salir del laberinto.<br><br>
+            <button onclick="window.location.href='carta.html'">Salir del laberinto</button>
+        `;
+        } else {
+        resultado.innerHTML = `
+            ✖️ Eso no suena a algo que vos dirías... Pensalo otra vez.<br>
+            <em>No te guíes por lo que ves.</em>
+        `;
+        }
+    });
+    </script>
+
+</body>
+</html>
