@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>otro mas</title>
+</head>
+<body>
+    <div class="contenedor">
+        <h3>Completa la frase</h3>
+        <p>Esta capaz es un poco mas complicada...</p>
+        <p>"En mi locura existe un tesoro tan pero tan valioso..."</p>
+        <label for="respuesta">Respuesta: </label>
+        <input type="text" id="respuesta">
+        <button id="confirmarBtn">Confirmar</button>
+    </div>
+    
+</body>
+
+<style>
+    body {
+        font-family: "Poppins", sans-serif;
+        background-image: url(./img/Sin\ título.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        min-height: 100vh;
+        height: auto;
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  /* Centra verticalmente */
+        align-items: center;      /* Centra horizontalmente */
+        text-align: center;
+    }
+
+    .contenedor {
+        color: white;
+        padding: 20px;
+        background-color: rgba(77, 75, 75, 0.7);
+    }
+
+    .contenedor input {
+        width: 200px;
+    }
+
+    .contenedor button {
+        font-family: "Poppins", sans-serif;
+        width: 100px;
+        height: 30px;
+
+    }
+</style>
+
+<script>
+    document.getElementById("confirmarBtn").addEventListener("click", function () {
+        const input = document.getElementById("respuesta").value.trim();
+        const respuestaCorrecta = "que me atrevi a dejarlo todo para saber donde esta"; // Acá poné el año correcto de “la Cosecha”
+
+        if (input === respuestaCorrecta) {
+            window.location.href = "carta.html"; // redirige si es correcto
+        } else {
+            alert("Mmm... ¿estás seguro? Volve a intentar.");
+        }
+    });
+</script>
+</html>
