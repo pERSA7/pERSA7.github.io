@@ -61,9 +61,9 @@ h1 {
     left: 0;
     right: 0;
     z-index: 4;
-    border-top: 180px solid var(--solapa-sobre);
-    border-right: 200px solid transparent;
-    border-left: 200px solid transparent;
+    border-top: 150px solid var(--solapa-sobre);
+    border-right: 150px solid transparent;
+    border-left: 150px solid transparent;
     transform-origin: top;
     transition: all 0.5s ease-in-out 0.7s;
     border-radius: 10px;
