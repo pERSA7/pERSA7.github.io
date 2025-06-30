@@ -10,23 +10,38 @@
 </head>
 <body>
     <div class="contenedor">
-        <h3>Todo empezo con una eleccion.</h3><br>
-        <p>"Un momento inesperado, como cuando alguien se ofrece por otro…
-        No todos recuerdan la fecha exacta. Pero seguramente vos sí.
-
-        Tal vez no haya un Capitolio.
-        Tal vez no haya cámaras.
-        Pero fue un día que lo cambió todo.
-
-        ¿Cuándo fue la Cosecha?"</p>
-        <div class="contenedor">
-            <label for="anio">Año: </label>
-            <input type="number" id="anioInput" placeholder="Ingresa año">
-            <button id="confirmarBtn">Confirmar</button>
+        <h3>Te vas a cagar de hambre con estos Juegos, o algo asi se llamaba la pelicula JAJAJJA</h3><br>
+        <p>Responde este cuestionario para avanzar al siguiente y acercarte al final</p>
+        <form id="cuestionario">
+            <div class="pregunta">
+            <p>1- ¿En que distrito vivian los loquitos estos de Katniss y el pita(Peeta)?</p>
+            <label> <input type="radio" name="p1" value="correcto">Distrito 12</label>
+            <label> <input type="radio" name="p1" value="incorrecto">Distrito 11</label>
+            <label> <input type="radio" name="p1" value="incorrecto">Distrito 7</label>
+            <label> <input type="radio" name="p1" value="incorrecto">Distrito 1</label>
         </div>
     
+        <div class="pregunta">
+            <p>2- ¿Que significan los 3 dedos levantado?</p>
+            <label> <input type="radio" name="p2" value="incorrecto">LO MATE!</label>
+            <label> <input type="radio" name="p2" value="incorrecto">Venganza</label>
+            <label> <input type="radio" name="p2" value="correcto">Rebeldia</label>
+            <label> <input type="radio" name="p2" value="incorrecto">Vamos al otro boliche</label>
+        </div>
 
-    <p><strong>Pista:</strong> no te guies por lo que estas viendo¿ </p>
+        <div class="pregunta">
+            <p>3- ¿Que le dio la hermana de Katniss antes de ir a cagarse a palo con todo el mundo?</p>
+            <label> <input type="radio" name="p3" value="incorrecto">Una pulsera</label>
+            <label> <input type="radio" name="p3" value="correcto">Un Sinsajo</label>
+            <label> <input type="radio" name="p3" value="incorrecto">La bendicion de dios</label>
+            <label> <input type="radio" name="p3" value="incorrecto">Vale de 2 hamburguesas de Delicia Bajonera</label>
+        </div>
+
+        <button type="submit">Ver Resultados</button>
+        </form>
+
+        <div class="resultado" id="resultado"></div>
+        
     </div>
         
     
@@ -49,25 +64,10 @@
     }
 
     .contenedor {
-        font-family: "Poppins", sans-serif;
-        margin: 10px;
-        padding: 20px;
-        max-width: 90%;
-        width: 100%;
-        box-sizing: border-box;
         background-color: rgba(194, 184, 184, 0.7);
-        color: white;
     }
-
-    .contenedor input {
-        height: 30px;
-        width: 130px;
-        border-radius: 7px;
-        border-color: rgba(194, 184, 184, 0.7);
-    }
-
     .contenedor button {
-        height: 30px;
+        height: 70px;
         width: 100px;
         font-family: "Poppins", sans-serif;
         border-radius: 8px;
@@ -75,7 +75,14 @@
         margin: 10px;
     }
 
+        input[type="radio"] {
+        transform: scale(1.5);
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
     .contenedor h3 {
+        color: white;
         text-shadow:
         -1px -1px 0 black,
         1px -1px 0 black,
@@ -103,16 +110,28 @@
 </style>
 
 <script>
-    document.getElementById("confirmarBtn").addEventListener("click", function () {
-        const input = document.getElementById("anioInput").value.trim();
-        const fechaCorrecta = "2023"; // Acá poné el año correcto de “la Cosecha”
+    const form = document.getElementById("cuestionario");
+    const resultado = document.getElementById("resultado");
 
-        if (input === fechaCorrecta) {
-            window.location.href = "segundo.html"; // redirige si es correcto
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const p1 = form.p1.value;
+        const p2 = form.p2.value;
+        const p3 = form.p3.value;
+
+        if (p1 === "correcto" && p2 === "correcto" && p3 === "correcto") {
+        resultado.innerHTML = `
+            ✔️ Bien ahi wach.<br>
+            Ahora podes pasar al siguiente.<br>
+            <button onclick="window.location.href='mazeTest.html'">Siguiente</button>
+        `;
         } else {
-            alert("Mmm... ¿estás seguro? Volve a intentar.");
+        resultado.innerHTML = `
+            ✖️ MMMM nonono, incorrecto ahre.<br>
+        `;
         }
     });
-</script>
+    </script>
 
 </html>
