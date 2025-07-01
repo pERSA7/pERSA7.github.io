@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="contenedor">
-        <h3>Completa la frase</h3>
+        <h3>Ultimo... Completa la frase</h3>
         <p>Esta capaz es un poco mas complicada...</p>
         <p>"En mi locura existe un tesoro tan pero tan valioso..."</p>
         <label for="respuesta">Respuesta: </label>
@@ -56,9 +56,17 @@
 </style>
 
 <script>
+    function limpiarTexto(texto) {
+        return texto
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/[.,!?¡¿"]/g, "") 
+            .trim(); 
+    }
     document.getElementById("confirmarBtn").addEventListener("click", function () {
-        const input = document.getElementById("respuesta").value.trim();
-        const respuestaCorrecta = "que me atrevi a dejarlo todo para saber donde esta"; // Acá poné el año correcto de “la Cosecha”
+        const input = limpiarTexto(document.getElementById("respuesta").value);
+        const respuestaCorrecta = limpiarTexto("que me atreví a dejarlo todo para saber dónde está"); 
 
         if (input === respuestaCorrecta) {
             window.location.href = "carta.html"; // redirige si es correcto

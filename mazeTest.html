@@ -9,6 +9,7 @@
     color: #d0f0c0;
     font-family: 'Courier New', monospace;
     padding: 20px;
+    font-size: 20px;
     }
 
     .pregunta {
@@ -50,27 +51,27 @@
 
     <form id="testLaberinto">
     <div class="pregunta">
-        <p>1. Cuando Thomas despertó en el ascensor, no recordaba quién era. Vos… ¿qué fue lo primero que olvidaste?</p>
-        <label><input type="radio" name="p1" value="incorrecto"> El motivo</label><br>
-        <label><input type="radio" name="p1" value="correcto"> La verdad</label><br>
-        <label><input type="radio" name="p1" value="incorrecto"> Lo que dolía</label><br>
-        <label><input type="radio" name="p1" value="incorrecto"> El camino</label>
+        <p>1. ¿Cuál es el primer recuerdo que tiene el facherazo de Thomas al despertar del ascensor?</p>
+        <label><input type="radio" name="p1" value="incorrecto"> Un laboratorio</label><br>
+        <label><input type="radio" name="p1" value="correcto"> Su nombre</label><br>
+        <label><input type="radio" name="p1" value="incorrecto"> 4 de noviembre de 2023 :(</label><br>
+        <label><input type="radio" name="p1" value="incorrecto"> A la rubia puta esa la jefa de todos</label>
     </div>
 
     <div class="pregunta">
-        <p>2. Teresa se alejó de Thomas cuando otros le llenaron la cabeza... ¿por qué creés que lo hizo?</p>
-        <label><input type="radio" name="p2" value="incorrecto"> Porque dejó de quererlo</label><br>
-        <label><input type="radio" name="p2" value="incorrecto"> Porque confió en lo que le dijeron</label><br>
-        <label><input type="radio" name="p2" value="correcto"> Porque creyó que era lo correcto</label><br>
-        <label><input type="radio" name="p2" value="incorrecto"> Porque tenía miedo</label>
+        <p>2. ¿A que ciudad llegan para rescatar al chino Minho?</p>
+        <label><input type="radio" name="p2" value="incorrecto"> Playas doradas</label><br>
+        <label><input type="radio" name="p2" value="incorrecto"> Avellaneda</label><br>
+        <label><input type="radio" name="p2" value="correcto"> La Ultima Ciudad</label><br>
+        <label><input type="radio" name="p2" value="incorrecto"> Distrito 12 ah na q ve</label>
     </div>
 
     <div class="pregunta">
-        <p>3. El laberinto parecía imposible, pero había una salida. ¿Cuál fue la clave para encontrarla?</p>
-        <label><input type="radio" name="p3" value="incorrecto"> La memoria</label><br>
-        <label><input type="radio" name="p3" value="correcto"> La confianza</label><br>
-        <label><input type="radio" name="p3" value="incorrecto"> La desesperación</label><br>
-        <label><input type="radio" name="p3" value="incorrecto"> El control</label>
+        <p>3. ¿Qué decisión toma Teresa que cambia el rumbo del grupo?</p>
+        <label><input type="radio" name="p3" value="incorrecto"> Se roba la cura</label><br>
+        <label><input type="radio" name="p3" value="correcto"> Los traiciona con la org. malvada, una botona mal</label><br>
+        <label><input type="radio" name="p3" value="incorrecto"> Intenta matar a Thomas</label><br>
+        <label><input type="radio" name="p3" value="incorrecto"> Se va sola a otro lado</label>
     </div>
 
     <button type="submit">Ver resultado</button>
@@ -93,13 +94,12 @@
         resultado.innerHTML = `
             ✔️ Recuperación completada.<br>
             Memoria restaurada.<br>
-            Ahora que lo sabés... podés salir del laberinto.<br><br>
+            Podés salir del laberinto.<br><br>
             <button onclick="window.location.href='segundo.html'">Salir del laberinto</button>
         `;
         } else {
         resultado.innerHTML = `
-            ✖️ Eso no suena a algo que vos dirías... Pensalo otra vez.<br>
-            <em>No te guíes por lo que ves.</em>
+            ✖️ Le erraste, hacelo de vuelta boe<br>
         `;
         }
     });
